@@ -82,6 +82,7 @@ int main()
 
 // Exercício 06
 
+/*
 void aponta_para_zero(int **pp, int* zero)
 {
 	*pp = zero;
@@ -100,3 +101,21 @@ int main()
 	printf("O Valor do ponteiro do ponteiro sera: %d", *p);
 }
 
+*/
+
+// Exercício 07
+
+/*
+void imprime_array(const int* v, int n);
+
+int main() 
+{
+	int v[5] = { 10,20,30,40,50 };
+	int* p = v;
+
+	for (int i = 0; i < 5; i++) {
+		printf("%d\n", *(v + i));
+	}
+}
+
+*/
