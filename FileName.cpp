@@ -84,7 +84,7 @@ int main()
 
 void aponta_para_zero(int **pp, int* zero)
 {
-	int *pp = zero;
+	*pp = zero;
 }
 int main() 
 {
