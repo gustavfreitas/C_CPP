@@ -1,2 +1,5 @@
 ﻿  FileName.cpp
-  AULA_01.vcxproj -> C:\Users\gustavo.sfreitas12\source\repos\AULA_01\x64\Debug\AULA_01.exe
+C:\Users\gustavo.sfreitas12\source\repos\AULA_01\AULA_01\FileName.cpp(165,3): error C2371: 'Aluno': redefinição; tipos básicos diferentes
+      C:\Users\gustavo.sfreitas12\source\repos\AULA_01\AULA_01\FileName.cpp(152,33):
+      consulte a declaração de 'Aluno'
+  

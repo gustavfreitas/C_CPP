@@ -119,3 +119,56 @@ int main()
 }
 
 */
+
+// Exercício 08
+/*
+int meu_strlen(const char* s);
+
+void main() 
+{
+
+	char string[20] = "radioknife";
+	char* s = string; 
+	int qtd = meu_strlen(s);
+	printf("A Quantidade de Caracteres eh: %d \n", qtd);
+
+	meu_strlen(s);
+}
+
+int meu_strlen(const char* s) 
+{
+	if (s == NULL) return -1;
+	int contador = 0;
+	while (*s != '\0') {
+		s++;
+		contador++;
+	}
+	return contador;
+}
+*/
+
+// Exercício 09
+
+typedef struct{
+	char nome[50];
+	int ra;
+	float nota;
+} Aluno;
+
+void imprime_aluno(const struct Aluno* a) {
+
+	if (a == NULL) {
+		printf("Error 404\n");
+	}
+	return;
+
+	printf("Nome: %s | RA: %d | Nota: %.2f", a->nome, a->ra, a->nota);
+
+}
+
+void main()
+{
+
+	Aluno 
+
+}
