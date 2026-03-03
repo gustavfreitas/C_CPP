@@ -4,7 +4,7 @@
 
 /* Ponteiros
 
-// Exercício 01
+// ExercÃ­cio 01
 
 int main() {
 
@@ -12,15 +12,15 @@ int main() {
 	int *p = &a;
 
 	printf("O Valor de a eh: %d\n", a);
-	printf("O Endereço de a eh: %p\n", &a);
+	printf("O EndereÃ§o de a eh: %p\n", &a);
 
-	printf("O Endereço de a eh %p\n:", p);
+	printf("O EndereÃ§o de a eh %p\n:", p);
 	printf("O Valor do ponteiro de a eh: %d\n", *p);
 
 	return 0;
 }
 
-// Exercício 02
+// ExercÃ­cio 02
 
 int main() 
 {
@@ -54,7 +54,7 @@ int main()
 }
 */
 
-// Exercício 05
+// ExercÃ­cio 05
 
 /*
 
@@ -80,7 +80,7 @@ int main()
 
 */
 
-// Exercício 06
+// ExercÃ­cio 06
 
 /*
 void aponta_para_zero(int **pp, int* zero)
@@ -103,7 +103,7 @@ int main()
 
 */
 
-// Exercício 07
+// ExercÃ­cio 07
 
 /*
 void imprime_array(const int* v, int n);
@@ -120,7 +120,7 @@ int main()
 
 */
 
-// Exercício 08
+// ExercÃ­cio 08
 /*
 int meu_strlen(const char* s);
 
@@ -147,8 +147,8 @@ int meu_strlen(const char* s)
 }
 */
 
-// Exercício 09
-
+// ExercÃ­cio 09
+/*
 typedef struct{
 	char nome[50];
 	int ra;
@@ -172,3 +172,85 @@ void main()
 	Aluno 
 
 }
+
+*/
+
+// ExercÃ­cio 10
+
+/*
+
+int* criar_int(int valor) {
+	int* p = (int*) malloc(sizeof(int));
+	*p = valor;
+	return p;
+}
+
+int main() {
+	int* p = criar_int(42);
+	printf("Valor de valor: %d", *p);
+	free(p);
+	*p = NULL;
+}
+
+*/
+
+
+// ExercÃ­cio 11
+
+/*
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No;
+
+No* criar_No(int valor) 
+{
+	No* p = (No*)malloc(sizeof(No*));
+	p->valor = valor;
+	p->prox = NULL;
+	return p;
+}
+
+int* criar_int(int valor) {
+	int* p = (int*)malloc(sizeof(No));
+	*p = valor;
+	return p;
+}
+
+int main() {
+	No* p = criar_No(42);
+	printf("Valor de valor: %d", p->valor);
+	free(p);
+}
+
+*/
+
+// ExercÃ­cio 12
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No; 
+
+void push_front(No** head, int v) {
+	No* novo = (No*)malloc(sizeof(No));
+	if (novo == NULL) return;
+	novo->valor = v;
+	novo->prox = *head;
+	*head = novo;
+}
+int main() {
+	No* head = NULL;
+
+	push_front(&head, 30);
+	push_front(&head, 20);
+	push_front(&head, 10);
+
+	for (No* p = head; p != NULL; p = p->prox) {
+		printf("%d -> ", p->valor);
+	}
+
+	printf("NULL\n");
+}
+	
