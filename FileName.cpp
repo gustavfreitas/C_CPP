@@ -228,6 +228,8 @@ int main() {
 
 // Exercício 12
 
+/*
+
 typedef struct No {
 	int valor;
 	struct No* prox;
@@ -254,3 +256,212 @@ int main() {
 	printf("NULL\n");
 }
 	
+*/
+
+// Exercício 13
+
+/*
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No;
+
+void push_front(No** head, int v) {
+	No* novo = (No*)malloc(sizeof(No));
+	if (novo == NULL) return;
+	novo->valor = v;
+	novo->prox = *head;
+	*head = novo;
+}
+int main() {
+	No* head = NULL;
+	int count;
+
+	push_front(&head, 30);
+	push_front(&head, 20);
+	push_front(&head, 10);
+
+	for (No* p = head; p != NULL; p = p->prox) {
+		printf("%d -> ", p->valor);
+		count += p->valor;
+	}
+
+	printf("NULL\n");
+
+	*/
+
+// Exercício 14
+
+/*
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No;
+
+void push_front(No** head, int v) {
+	No* novo = (No*)malloc(sizeof(No));
+	if (novo == NULL) return;
+	novo->valor = v;
+	novo->prox = *head;
+	*head = novo;
+}
+
+No* busca(No* head, int v) {
+	for (No* p = head; p != NULL; p = p->prox) {
+		if (p->valor == v) return p;
+	}
+	return NULL;
+}
+
+
+int main() {
+	No* head = NULL;
+	int count;
+
+	push_front(&head, 30);
+	push_front(&head, 20);
+	push_front(&head, 10);
+
+	No* buscado = busca(head, 20);
+	if (buscado != NULL) {
+		printf("O Valor encontrado eh: %d", buscado->valor);
+	}
+	else {
+		printf("O Valor não foi encontrado");
+	}
+
+	for (No* p = head; p != NULL; p = p->prox) {
+		printf("%d -> ", p->valor);
+		count += p->valor;
+	}
+
+	printf("NULL\n");
+
+	*/
+
+// Exercício 15
+
+/*
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No;
+
+void push_front(No** head, int v) {
+	No* novo = (No*)malloc(sizeof(No));
+	if (novo == NULL) return;
+	novo->valor = v;
+	novo->prox = *head;
+	*head = novo;
+}
+
+No* busca(No* head, int v) {
+	for (No* p = head; p != NULL; p = p->prox) {
+		if (p->valor == v) return p;
+	}
+	return NULL;
+}
+
+void pop_front(No** head) {
+	if (head == NULL) return;
+	No* temp = *head;
+	*head = temp->prox;
+	free(temp);
+
+}
+
+int main() {
+	No* head = NULL;
+
+	push_front(&head, 30);
+	push_front(&head, 20);
+	push_front(&head, 10);
+
+
+	No* buscado = busca(head, 20);
+	if (buscado != NULL) {
+		printf("O Valor encontrado eh: %d", buscado->valor);
+	}
+	else {
+		printf("O Valor não foi encontrado");
+	}
+
+
+	for (No* p = head; p != NULL; p = p->prox) {
+		printf("%d", p->valor);
+	}
+	return NULL;
+}
+
+*/
+
+// Exercício 16
+
+/*
+
+typedef struct No {
+	int valor;
+	struct No* prox;
+} No;
+
+void push_front(No** head, int v) {
+	No* novo = (No*)malloc(sizeof(No));
+	if (novo == NULL) return;
+	novo->valor = v;
+	novo->prox = *head;
+	*head = novo;
+}
+
+No* busca(No* head, int v) {
+	for (No* p = head; p != NULL; p = p->prox) {
+		if (p->valor == v) return p;
+	}
+	return NULL;
+}
+
+void pop_front(No** head) {
+	if (head == NULL) return;
+	No* temp = *head;
+	*head = temp->prox;
+	free(temp);
+
+}
+
+void free_lista(No **head)
+{
+	No* atual = *head;
+	while (atual != NULL) {
+		No* prox = atual->prox; 
+		free(atual);
+		atual = prox;
+	}
+	*head = NULL;
+}
+
+int main() {
+	No* head = NULL;
+
+	push_front(&head, 30);
+	push_front(&head, 20);
+	push_front(&head, 10);
+
+
+	No* buscado = busca(head, 20);
+	if (buscado != NULL) {
+		printf("O Valor encontrado eh: %d", buscado->valor);
+	}
+	else {
+		printf("O Valor não foi encontrado");
+	}
+
+
+	for (No* p = head; p != NULL; p = p->prox) {
+		printf("%d", p->valor);
+	}
+	return NULL;
+}
+
+*/
