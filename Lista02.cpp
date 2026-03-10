@@ -2,7 +2,7 @@
 #include <locale.h>
 #include <stdlib.h>
 
-// Exercício 17
+// ExercÃ­cio 17
 
 /*
 
@@ -37,7 +37,7 @@ void main() {
 
 */
 
-// Exercício 18
+// ExercÃ­cio 18
 /*
 typedef struct No {
     int valor;
@@ -78,7 +78,7 @@ void main() {
 }
 */
 
-// Exercício 19
+// ExercÃ­cio 19
 
 typedef struct No {
     int valor;
@@ -89,13 +89,13 @@ void inserir_ordenado(No** head, int v) {
     No* novo = (No*)malloc(sizeof(No));
     if (novo == NULL) return;
     novo->valor = v;
-    //caso especial: lista vazia ou valor menor que a cabeça
+    //caso especial: lista vazia ou valor menor que a cabeÃ§a
     if (*head == NULL || v <= (*head)->valor) {
         novo->prox = *head;
         *head = novo;
         return;
     }
-    //caso geral: encontrar a posição correta
+    //caso geral: encontrar a posiÃ§Ã£o correta
     No* anterior = *head;
     No* atual = (*head)->prox;
     while (atual != NULL && atual->valor < v) {
@@ -123,4 +123,5 @@ void main() {
     inserir_ordenado(&head, 25);
     imprime_lista(head);
     printf("[NULL]");
+
 }
