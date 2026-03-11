@@ -186,7 +186,7 @@ void main() {
 */
 
 // Exercício 21
-
+/*
 typedef struct No {
     int valor;
     struct No* prox;
@@ -254,3 +254,4 @@ void main() {
     imprime_lista(head);
     printf("[NULL]");
 }
+*/
