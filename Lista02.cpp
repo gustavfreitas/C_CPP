@@ -79,7 +79,7 @@ void main() {
 */
 
 // Exercício 19
-
+/*
 typedef struct No {
     int valor;
     struct No* prox;
@@ -124,4 +124,133 @@ void main() {
     imprime_lista(head);
     printf("[NULL]");
 
+}
+*/
+// Exercício 20
+/*
+typedef struct No {
+    int valor;
+    struct No* prox;
+} No;
+
+No* buscar(No* head, int v) {
+    No* atual = head;
+    while (atual != NULL) {
+        if (atual->valor == v) {
+            return atual; //encontrado
+        }
+            atual = atual->prox;
+    }
+    return NULL; //não encontrado
+}
+
+
+void inserir_ordenado(No** head, int v) {
+    No* novo = (No*)malloc(sizeof(No));
+    if (novo == NULL) return;
+    novo->valor = v;
+    //caso especial: lista vazia ou valor menor que a cabeça
+    if (*head == NULL || v <= (*head)->valor) {
+        novo->prox = *head;
+        *head = novo;
+        return;
+    }
+    //caso geral: encontrar a posição correta
+    No* anterior = *head;
+    No* atual = (*head)->prox;
+    while (atual != NULL && atual->valor < v) {
+        anterior = atual;
+        atual = atual->prox;
+    }
+    anterior->prox = novo;
+    novo->prox = atual;
+}
+
+void imprime_lista(No* head) {
+    No* p = head;
+    while (p != NULL) {
+        printf("[%d]->", p->valor);
+        p = p->prox;
+    }
+}
+
+void main() {
+    No* head = NULL;
+    inserir_ordenado(&head, 10);
+    inserir_ordenado(&head, 20);
+    inserir_ordenado(&head, 30);
+    inserir_ordenado(&head, 40);
+    imprime_lista(head);
+    printf("[NULL]");
+}
+*/
+
+// Exercício 21
+
+typedef struct No {
+    int valor;
+    struct No* prox;
+} No;
+
+int apagar(No** head, int v) {
+    if (*head == NULL) return 0; //lista vazia
+    //caso 1: valor na cabeça
+    if ((*head)->valor == v) {
+        No* temp = *head;
+        *head = (*head)->prox;
+        free(temp);
+        return 1;
+    }
+    //caso 2: valor em posição intermediária ou final
+    No* anterior = *head;
+    No* atual = (*head)->prox;
+    while (atual != NULL) {
+        if (atual->valor == v) {
+            anterior->prox = atual->prox;
+            free(atual);
+            return 1;
+        }
+        anterior = atual;
+        atual = atual->prox;
+    }
+    return 0;
+}
+
+void inserir_ordenado(No** head, int v) {
+    No* novo = (No*)malloc(sizeof(No));
+    if (novo == NULL) return;
+    novo->valor = v;
+    //caso especial: lista vazia ou valor menor que a cabeça
+    if (*head == NULL || v <= (*head)->valor) {
+        novo->prox = *head;
+        *head = novo;
+        return;
+    }
+    //caso geral: encontrar a posição correta
+    No* anterior = *head;
+    No* atual = (*head)->prox;
+    while (atual != NULL && atual->valor < v) {
+        anterior = atual;
+        atual = atual->prox;
+    }
+    anterior->prox = novo;
+    novo->prox = atual;
+}
+
+void imprime_lista(No* head) {
+    No* p = head;
+    while (p != NULL) {
+        printf("[%d]->", p->valor);
+        p = p->prox;
+    }
+}
+
+void main() {
+    No* head = NULL;
+    inserir_ordenado(&head, 10);
+    inserir_ordenado(&head, 20);
+    inserir_ordenado(&head, 30);
+    inserir_ordenado(&head, 40);
+    imprime_lista(head);
+    printf("[NULL]");
 }
