@@ -622,7 +622,9 @@ void main() {
     inserir_ordenado(&head, 10);
     inserir_ordenado(&head, 20);
     inserir_ordenado(&head, 30);
+	remover_ultimo(&head);
     inserir_ordenado(&head, 40);
+	remover_ultimo(&head);
     imprime_lista(head);
     remover_ultimo(&head);
     printf("[NULL]");
