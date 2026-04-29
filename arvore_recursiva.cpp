@@ -25,8 +25,16 @@ No* inserir_raiz(No* raiz, int v) {
         else if (v > raiz->valor) 
             raiz->direita = inserir_raiz(raiz->direita, v);
         return raiz;
-        
     }
+
+No* buscar(No* raiz, int v) {
+    if (raiz == NULL) return NULL;
+    if (v < raiz->valor)
+        buscar(raiz->esquerda, v);
+    if (v > raiz->valor)
+        return buscar(raiz->direita, v);
+    return raiz;
+}
 
 void main() {
     No* raiz = NULL;
@@ -34,7 +42,6 @@ void main() {
     raiz = inserir_raiz(raiz, 50);
     raiz = inserir_raiz(raiz, 30);
     raiz = inserir_raiz(raiz, 20);
-    
-    printf("%d" "%d" "%d", raiz->direita->esquerda, raiz->valor, raiz->esquerda);
 
+    printf("%d", (buscar(raiz, 50))->valor);
 }
