@@ -95,6 +95,6 @@ No* remover(No* raiz, int v) {
         printf("Raiz: %d\n", raiz->valor); //50
         printf("Esq da raiz: %d\n", raiz->esquerda->valor); //30
         printf("Dir da raiz: %d\n", raiz->direita->valor); //70
-        printf("Esq-Esq: %d\n", raiz->esquerda->esquerda->valor); //20
+        printf("Esq-Esq: %d\n", raiz->esquerda->valor); //20
         printf("Esq-Dir: %d\n", raiz->esquerda->direita->valor); //40
     }
